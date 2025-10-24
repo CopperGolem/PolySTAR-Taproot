@@ -33,6 +33,7 @@
     in {
       devShell = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
+          pkg-config
           gcc-arm-embedded10
           gcc10
           binutils
@@ -57,6 +58,7 @@
           stlink
           openocd
           boost
+          libusb1
         ];
 
       shellHook = ''
