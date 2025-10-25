@@ -17,3 +17,5 @@ docs/doxyoutput
 
 # Env config
 .direnv
+.cache
+compile_commands.json
