@@ -44,6 +44,8 @@
           git
           doxygen
           gtest
+          pkgsOld.bear
+          pkgsOld.glibc
         ];
 
         buildInputs = with pkgs; [
