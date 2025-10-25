@@ -34,7 +34,6 @@
           scons
           gnumake
           automake
-          clang-tools
           git
           doxygen
           gtest
