@@ -23,7 +23,6 @@
 
       python = pkgs.python3;
       pythonPackages = python.pkgs;
-
     in {
       devShell = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
@@ -39,6 +38,7 @@
           gtest
           pkgsOld.bear
           pkgsOld.glibc
+          clang-tools
         ];
 
         buildInputs = with pkgs; [
