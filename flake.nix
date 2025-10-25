@@ -24,12 +24,6 @@
       python = pkgs.python3;
       pythonPackages = python.pkgs;
 
-      # Define library paths for dynamic linking
-      lib-path = with pkgs; lib.makeLibraryPath [
-        boost         # For boost libraries
-        libffi        # For Python extensions
-        openssl       # For Python/pip SSL support
-      ];
     in {
       devShell = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
