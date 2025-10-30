@@ -15,16 +15,10 @@ template <
     ExecutionStrategy<Subsystem> Execution>
 ChassisCommand<Subsystem, Init, Input, Execution>::ChassisCommand(
     CommandData<Subsystem>&& commandData,
-    Strategies<Subsystem, Init, Input, Execution> strategies,
-    std::function<void(CommandData<Subsystem>&)> constructor)
+    Strategies<Subsystem, Init, Input, Execution> strategies)
     : strategies_{strategies},
       commandData_{std::move(commandData)}
 {
-    if (!constructor)
-    {
-        return;
-    }
-    constructor(commandData_);
 }
 
 template <

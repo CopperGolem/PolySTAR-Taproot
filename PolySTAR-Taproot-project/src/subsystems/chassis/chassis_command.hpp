@@ -68,7 +68,7 @@ template <typename Subsystem>
 struct CommandData
 {
     src::Drivers* drivers;
-    Subsystem* const chassis;
+    Subsystem* const subsystem;
     const char* name;
 };
 
@@ -119,8 +119,7 @@ class ChassisCommand : public tap::control::Command
 public:
     ChassisCommand(
         CommandData<Subsystem>&& commandData,
-        Strategies<Subsystem, Init, Input, Execution> strategies,
-        std::function<void(CommandData<Subsystem>&)> constructor = [](CommandData<Subsystem>&) {});
+        Strategies<Subsystem, Init, Input, Execution> strategies);
     ~ChassisCommand() override = default;
 
     ChassisCommand(const ChassisCommand& other) = delete;
